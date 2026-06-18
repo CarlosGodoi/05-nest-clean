@@ -1,0 +1,114 @@
+{
+  "editor.lineHeight": 28,
+  "editor.tabSize": 2,
+  "editor.tabCompletion": "on",
+  "editor.wordWrap": "on",
+  "editor.fontFamily": "JetBrains Mono",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "explorer.confirmDragAndDrop": false,
+  "diffEditor.renderSideBySide": true,
+  "editor.formatOnSave": true,
+  "html.autoClosingTags": true,
+  "editor.colorDecorators": false,
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingQuotes": "always",
+  "prettier.singleQuote": true,
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
+  "emmet.includeLanguages": {
+    "angular-html": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "files.associations": {
+    "*.js": "javascriptreact",
+    "*.component.html": "angular-html"
+  },
+  "[angular-html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.suggestSelection": "recentlyUsed",
+    "editor.language.selectionConfirmKeys": "tab"
+  },
+  "editor.minimap.renderCharacters": false,
+  "breadcrumbs.enabled": false,
+  // "telemetry.enableCrashReporter": true,
+  // "telemetry.enableTelemetry": true,
+  "color-highlight.markerType": "dot-before",
+  "editor.renderWhitespace": "selection",
+  "workbench.statusBar.visible": true,
+  "prettier.trailingComma": "all",
+  "http.proxy": "",
+  "http.proxyAuthorization": null,
+  "http.proxyStrictSSL": false,
+  "json.validate.enable": false,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.sortOrder": "default",
+  "window.title": "${activeEditorMedium}${separator}${rootName}",
+  "window.newWindowDimensions": "inherit",
+  "html.format.wrapAttributes": "auto",
+  "html.format.wrapLineLength": 0,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "editor.minimap.enabled": false,
+  "json.schemaDownload.enable": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.fontFamily": "monospace",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
+  "editor.fontWeight": "normal",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.fontSize": 16,
+  "workbench.colorTheme": "Bearded Theme Vivid Purple",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.formatOnPaste": true,
+  "[prisma]": {
+    "editor.formatOnSave": true
+  },
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell",
+      "args": ["-nologo"]
+    },
+    "material-icon-theme.files.associations":{
+      "**.module.ts": "nest",
+      "**.guard.ts": "typescript",
+      "**.spec.ts": "ts-test",
+      "vitest.config.e2e.ts": "vite",
+      ".env.example": "gear"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Windows PowerShell": {
+      "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
+  "terminal.external.windowsExec": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.11.2921.0_x64__8wekyb3d8bbwe",
+  "editor.fontLigatures": true,
+  "workbench.iconTheme": "material-icon-theme"
+}
