@@ -85,13 +85,6 @@
       "icon": "terminal-powershell",
       "args": ["-nologo"]
     },
-    "material-icon-theme.files.associations":{
-      "**.module.ts": "nest",
-      "**.guard.ts": "typescript",
-      "**.spec.ts": "ts-test",
-      "vitest.config.e2e.ts": "vite",
-      ".env.example": "gear"
-    },
     "Command Prompt": {
       "path": [
         "${env:windir}\\Sysnative\\cmd.exe",
