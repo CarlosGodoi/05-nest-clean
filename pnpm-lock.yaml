@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@faker-js/faker':
+        specifier: ^10.5.0
+        version: 10.5.0
       '@nestjs/common':
         specifier: ^11.0.1
         version: 11.1.19(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -35,6 +38,9 @@ importers:
       bcryptjs:
         specifier: ^3.0.3
         version: 3.0.3
+      dayjs:
+        specifier: ^1.11.21
+        version: 1.11.21
       passport-jwt:
         specifier: ^4.0.1
         version: 4.0.1
@@ -62,10 +68,10 @@ importers:
         version: 9.39.4
       '@nestjs/cli':
         specifier: ^11.0.0
-        version: 11.0.21(@swc/core@1.15.41)(@types/node@24.12.2)(prettier@3.8.3)
+        version: 11.0.21(@swc/core@1.15.41)(@types/node@24.12.2)(prettier@3.8.4)
       '@nestjs/schematics':
         specifier: ^11.0.0
-        version: 11.1.0(chokidar@4.0.3)(prettier@3.8.3)(typescript@5.9.3)
+        version: 11.1.0(chokidar@4.0.3)(prettier@3.8.4)(typescript@5.9.3)
       '@nestjs/testing':
         specifier: ^11.0.1
         version: 11.1.19(@nestjs/common@11.1.19(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.19)(@nestjs/platform-express@11.1.19)
@@ -99,9 +105,18 @@ importers:
       eslint:
         specifier: ^10.2.1
         version: 10.2.1(jiti@2.7.0)
+      eslint-config-prettier:
+        specifier: ^10.1.8
+        version: 10.1.8(eslint@10.2.1(jiti@2.7.0))
+      eslint-plugin-prettier:
+        specifier: ^5.5.6
+        version: 5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@10.2.1(jiti@2.7.0)))(eslint@10.2.1(jiti@2.7.0))(prettier@3.8.4)
       globals:
         specifier: ^17.0.0
         version: 17.5.0
+      prettier:
+        specifier: ^3.8.4
+        version: 3.8.4
       prisma:
         specifier: ^7.8.0
         version: 7.8.0(@types/react@19.2.15)(magicast@0.5.3)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(typescript@5.9.3)
@@ -250,6 +265,10 @@ packages:
   '@eslint/plugin-kit@0.7.1':
     resolution: {integrity: sha512-rZAP3aVgB9ds9KOeUSL+zZ21hPmo8dh6fnIFwRQj5EAZl9gzR7wxYbYXYysAM8CTqGmUGyp2S4kUdV17MnGuWQ==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
+
+  '@faker-js/faker@10.5.0':
+    resolution: {integrity: sha512-bsxD8WLS5lIj7aaoCx1YJkktqYj5vlBUE6HWzu2Q51ksrGJ0H737ECCKlFU7Yf8Br45z9t99frBp/J7kzbMPAg==}
+    engines: {node: ^20.19.0 || ^22.13.0 || ^23.5.0 || >=24.0.0, npm: '>=10'}
 
   '@hono/node-server@1.19.11':
     resolution: {integrity: sha512-dr8/3zEaB+p0D2n/IUrlPF1HZm586qgJNXK1a9fhg/PzdtkK7Ksd5l312tJX2yBuALqDYBlG20QEbayqPyxn+g==}
@@ -574,6 +593,10 @@ packages:
   '@pkgr/core@0.2.9':
     resolution: {integrity: sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
+
+  '@pkgr/core@0.3.6':
+    resolution: {integrity: sha512-SEeaJLb3qBNF/OaXnaR1NmmBbFYk1zC0ZH/52fATcRPLFg/p791YrcyFFy44Bo9sLaGuSuLp5Q6axbb/O+v/RA==}
+    engines: {node: ^14.18.0 || >=16.0.0}
 
   '@prisma/adapter-pg@7.8.0':
     resolution: {integrity: sha512-ygb3UkerK3v8MDpXVgCISdRNDozpxh6+JVJgiIGbSr5KBgz10LLf5ejUskPGoXlsIjxsOu6nuy1JVQr2EKGSlg==}
@@ -1653,6 +1676,9 @@ packages:
     resolution: {integrity: sha512-BS8PfmtDGnrgYdOonGZQdLZslWIeCGFP9tpan0hi1Co2Zr2NKADsvGYA8XxuG/4UWgJ6Cjtv+YJnB6MM69QGlQ==}
     engines: {node: '>= 0.4'}
 
+  dayjs@1.11.21:
+    resolution: {integrity: sha512-98IT+HOahAisibz/yjKbzuOBwYcjJ7BCLPzARyHiyEBmRz4fatF+KPJszEHXsGYjUG234aH/cOjW1wwTbKUZlA==}
+
   debug@3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
     peerDependencies:
@@ -1838,6 +1864,12 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
+  eslint-config-prettier@10.1.8:
+    resolution: {integrity: sha512-82GZUjRS0p/jganf6q1rEO25VSoHH0hKPCTrgillPjdI/3bgBhAE1QzHrHTizjpRvy6pGAvKjDJtk2pF9NDq8w==}
+    hasBin: true
+    peerDependencies:
+      eslint: '>=7.0.0'
+
   eslint-config-prettier@9.1.2:
     resolution: {integrity: sha512-iI1f+D2ViGn+uvv5HuHVUamg8ll4tN+JRHGc6IJi4TP9Kl976C57fzPXgseXNs8v0iA8aSJpHsTWjDb9QJamGQ==}
     hasBin: true
@@ -1907,6 +1939,20 @@ packages:
 
   eslint-plugin-prettier@5.5.5:
     resolution: {integrity: sha512-hscXkbqUZ2sPithAuLm5MXL+Wph+U7wHngPBv9OMWwlP8iaflyxpjTYZkmdgB4/vPIhemRlBEoLrH7UC1n7aUw==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      '@types/eslint': '>=8.0.0'
+      eslint: '>=8.0.0'
+      eslint-config-prettier: '>= 7.0.0 <10.0.0 || >=10.1.0'
+      prettier: '>=3.0.0'
+    peerDependenciesMeta:
+      '@types/eslint':
+        optional: true
+      eslint-config-prettier:
+        optional: true
+
+  eslint-plugin-prettier@5.5.6:
+    resolution: {integrity: sha512-ifetmTcxWfz+4qRW3pH/ujdTq2jQIj59AxJMIN26K5avYgU8dxycUETQonWiW+wPrYXA0j3Try0l1CnwVQtDqQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       '@types/eslint': '>=8.0.0'
@@ -3027,6 +3073,11 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
+  prettier@3.8.4:
+    resolution: {integrity: sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q==}
+    engines: {node: '>=14'}
+    hasBin: true
+
   prisma@7.8.0:
     resolution: {integrity: sha512-yfN4yrw7HV9kEJhoy1+jgah0jafEIQsf7uWouSsM8MvJtlubsk+kM7AIBWZ8+GJl74Yj3c+nbYqBkMOxtsZ3Lw==}
     engines: {node: ^20.19 || ^22.12 || >=24.0}
@@ -3382,6 +3433,10 @@ packages:
 
   synckit@0.11.12:
     resolution: {integrity: sha512-Bh7QjT8/SuKUIfObSXNHNSK6WHo6J1tHCqJsuaFDP7gP0fkzSfTxI8y85JrppZ0h8l0maIgc2tfuZQ6/t3GtnQ==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+
+  synckit@0.11.13:
+    resolution: {integrity: sha512-eNRKgb3z66Yp3D2CixVujOUvXLFUTij/zVnV8KRyvFdQwpz7I5DS8UfRkTeLzb64u+dkzDSdelE24izu+zSSUg==}
     engines: {node: ^14.18.0 || >=16.0.0}
 
   tapable@2.3.3:
@@ -3910,6 +3965,8 @@ snapshots:
       '@eslint/core': 1.2.1
       levn: 0.4.1
 
+  '@faker-js/faker@10.5.0': {}
+
   '@hono/node-server@1.19.11(hono@4.12.23)':
     dependencies:
       hono: 4.12.23
@@ -4110,13 +4167,13 @@ snapshots:
       '@tybys/wasm-util': 0.10.2
     optional: true
 
-  '@nestjs/cli@11.0.21(@swc/core@1.15.41)(@types/node@24.12.2)(prettier@3.8.3)':
+  '@nestjs/cli@11.0.21(@swc/core@1.15.41)(@types/node@24.12.2)(prettier@3.8.4)':
     dependencies:
       '@angular-devkit/core': 19.2.24(chokidar@4.0.3)
       '@angular-devkit/schematics': 19.2.24(chokidar@4.0.3)
       '@angular-devkit/schematics-cli': 19.2.24(@types/node@24.12.2)(chokidar@4.0.3)
       '@inquirer/prompts': 7.10.1(@types/node@24.12.2)
-      '@nestjs/schematics': 11.1.0(chokidar@4.0.3)(prettier@3.8.3)(typescript@5.9.3)
+      '@nestjs/schematics': 11.1.0(chokidar@4.0.3)(prettier@3.8.4)(typescript@5.9.3)
       ansis: 4.2.0
       chokidar: 4.0.3
       cli-table3: 0.6.5
@@ -4196,7 +4253,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@nestjs/schematics@11.1.0(chokidar@4.0.3)(prettier@3.8.3)(typescript@5.9.3)':
+  '@nestjs/schematics@11.1.0(chokidar@4.0.3)(prettier@3.8.4)(typescript@5.9.3)':
     dependencies:
       '@angular-devkit/core': 19.2.24(chokidar@4.0.3)
       '@angular-devkit/schematics': 19.2.24(chokidar@4.0.3)
@@ -4205,7 +4262,7 @@ snapshots:
       pluralize: 8.0.0
       typescript: 5.9.3
     optionalDependencies:
-      prettier: 3.8.3
+      prettier: 3.8.4
     transitivePeerDependencies:
       - chokidar
 
@@ -4242,6 +4299,8 @@ snapshots:
       '@noble/hashes': 1.8.0
 
   '@pkgr/core@0.2.9': {}
+
+  '@pkgr/core@0.3.6': {}
 
   '@prisma/adapter-pg@7.8.0':
     dependencies:
@@ -5406,6 +5465,8 @@ snapshots:
       es-errors: 1.3.0
       is-data-view: 1.0.2
 
+  dayjs@1.11.21: {}
+
   debug@3.2.7:
     dependencies:
       ms: 2.1.3
@@ -5625,6 +5686,10 @@ snapshots:
       eslint: 10.2.1(jiti@2.7.0)
       semver: 7.7.4
 
+  eslint-config-prettier@10.1.8(eslint@10.2.1(jiti@2.7.0)):
+    dependencies:
+      eslint: 10.2.1(jiti@2.7.0)
+
   eslint-config-prettier@9.1.2(eslint@10.2.1(jiti@2.7.0)):
     dependencies:
       eslint: 10.2.1(jiti@2.7.0)
@@ -5733,6 +5798,16 @@ snapshots:
     optionalDependencies:
       '@types/eslint': 9.6.1
       eslint-config-prettier: 9.1.2(eslint@10.2.1(jiti@2.7.0))
+
+  eslint-plugin-prettier@5.5.6(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@10.2.1(jiti@2.7.0)))(eslint@10.2.1(jiti@2.7.0))(prettier@3.8.4):
+    dependencies:
+      eslint: 10.2.1(jiti@2.7.0)
+      prettier: 3.8.4
+      prettier-linter-helpers: 1.0.1
+      synckit: 0.11.13
+    optionalDependencies:
+      '@types/eslint': 9.6.1
+      eslint-config-prettier: 10.1.8(eslint@10.2.1(jiti@2.7.0))
 
   eslint-plugin-promise@6.6.0(eslint@10.2.1(jiti@2.7.0)):
     dependencies:
@@ -6861,6 +6936,8 @@ snapshots:
 
   prettier@3.8.3: {}
 
+  prettier@3.8.4: {}
+
   prisma@7.8.0(@types/react@19.2.15)(magicast@0.5.3)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(typescript@5.9.3):
     dependencies:
       '@prisma/config': 7.8.0(magicast@0.5.3)
@@ -7310,6 +7387,10 @@ snapshots:
   synckit@0.11.12:
     dependencies:
       '@pkgr/core': 0.2.9
+
+  synckit@0.11.13:
+    dependencies:
+      '@pkgr/core': 0.3.6
 
   tapable@2.3.3: {}
 

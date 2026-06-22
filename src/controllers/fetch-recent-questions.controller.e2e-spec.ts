@@ -1,9 +1,9 @@
-import { INestApplication } from "@nestjs/common"
-import { AppModule } from "@/app.module"
+import { INestApplication } from '@nestjs/common'
+import { AppModule } from '@/app.module'
 import { Test } from '@nestjs/testing'
 import request from 'supertest'
-import { PrismaService } from "@/prisma/prisma.service"
-import { JwtService } from "@nestjs/jwt"
+import { PrismaService } from '@/prisma/prisma.service'
+import { JwtService } from '@nestjs/jwt'
 
 describe('Fetch recent questions (E2E)', () => {
   let app: INestApplication
@@ -11,9 +11,8 @@ describe('Fetch recent questions (E2E)', () => {
   let jwt: JwtService
 
   beforeAll(async () => {
-
     const moduleRef = await Test.createTestingModule({
-      imports: [AppModule]
+      imports: [AppModule],
     }).compile()
 
     app = moduleRef.createNestApplication()
@@ -26,49 +25,49 @@ describe('Fetch recent questions (E2E)', () => {
   })
 
   afterAll(async () => {
-    await app.close(); // <- isso chama onModuleDestroy no PrismaService
-  });
+    await app.close() // <- isso chama onModuleDestroy no PrismaService
+  })
 
   test('[GET] /questions', async () => {
     const user = await prisma.user.create({
       data: {
-        name: "John Doe",
-        email: "johndoe@example.com",
-        password: '123456'
-      }
+        name: 'John Doe',
+        email: 'johndoe@example.com',
+        password: '123456',
+      },
     })
 
-    const access_token = jwt.sign({ sub: user.id})
+    const access_token = jwt.sign({ sub: user.id })
 
     await prisma.question.createMany({
       data: [
         {
           authorId: user.id,
-          title: "Question 01",
-          slug: "question-01",
-          content: "Question content"
+          title: 'Question 01',
+          slug: 'question-01',
+          content: 'Question content',
         },
         {
           authorId: user.id,
-          title: "Question 02",
-          slug: "question-02",
-          content: "Question content"
+          title: 'Question 02',
+          slug: 'question-02',
+          content: 'Question content',
         },
-      ]
+      ],
     })
 
     const response = await request(app.getHttpServer())
-    .get('/questions')
-    .set('Authorization', `Bearer ${access_token}`)
-    .send()
+      .get('/questions')
+      .set('Authorization', `Bearer ${access_token}`)
+      .send()
 
     expect(response.statusCode).toBe(200)
 
     expect(response.body).toEqual({
       questions: [
-        expect.objectContaining({ title: "Question 01" }),
-        expect.objectContaining({ title: "Question 02" }),
-      ]
+        expect.objectContaining({ title: 'Question 01' }),
+        expect.objectContaining({ title: 'Question 02' }),
+      ],
     })
   })
 })
