@@ -1,11 +1,11 @@
 import { INestApplication } from '@nestjs/common'
-import { AppModule } from '@/app.module'
+import { AppModule } from '@/infra/app.module'
 import { Test } from '@nestjs/testing'
 import request from 'supertest'
-import { PrismaService } from '@/prisma/prisma.service'
+import { PrismaService } from '@/infra/prisma/prisma.service'
 import { JwtService } from '@nestjs/jwt'
 
-describe('Fetch recent questions (E2E)', () => {
+describe('Create question (E2E)', () => {
   let app: INestApplication
   let prisma: PrismaService
   let jwt: JwtService
@@ -28,7 +28,7 @@ describe('Fetch recent questions (E2E)', () => {
     await app.close() // <- isso chama onModuleDestroy no PrismaService
   })
 
-  test('[GET] /questions', async () => {
+  test('[POST] /questions', async () => {
     const user = await prisma.user.create({
       data: {
         name: 'John Doe',
@@ -39,35 +39,22 @@ describe('Fetch recent questions (E2E)', () => {
 
     const access_token = jwt.sign({ sub: user.id })
 
-    await prisma.question.createMany({
-      data: [
-        {
-          authorId: user.id,
-          title: 'Question 01',
-          slug: 'question-01',
-          content: 'Question content',
-        },
-        {
-          authorId: user.id,
-          title: 'Question 02',
-          slug: 'question-02',
-          content: 'Question content',
-        },
-      ],
-    })
-
     const response = await request(app.getHttpServer())
-      .get('/questions')
+      .post('/questions')
       .set('Authorization', `Bearer ${access_token}`)
-      .send()
+      .send({
+        title: 'New question',
+        content: 'Question content',
+      })
 
-    expect(response.statusCode).toBe(200)
+    expect(response.statusCode).toBe(201)
 
-    expect(response.body).toEqual({
-      questions: [
-        expect.objectContaining({ title: 'Question 01' }),
-        expect.objectContaining({ title: 'Question 02' }),
-      ],
+    const questionOnDatabase = await prisma.question.findFirst({
+      where: {
+        title: 'New question',
+      },
     })
+
+    expect(questionOnDatabase).toBeTruthy()
   })
 })

@@ -9,6 +9,7 @@
   "explorer.confirmDragAndDrop": false,
   "diffEditor.renderSideBySide": true,
   "editor.formatOnSave": true,
+  "files.eol": "\n",
   "html.autoClosingTags": true,
   "editor.colorDecorators": false,
   "editor.autoClosingBrackets": "always",

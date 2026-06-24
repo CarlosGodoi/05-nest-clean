@@ -2,6 +2,7 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import prettierPlugin from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
+import { EndOfLineState } from 'typescript';
 
 export default tseslint.config(
   {

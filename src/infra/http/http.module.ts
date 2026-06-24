@@ -1,28 +1,20 @@
 import { Module } from '@nestjs/common'
-import { ConfigModule } from '@nestjs/config'
-import { PrismaService } from './prisma/prisma.service'
 import { CreateAccountController } from './controllers/create-account.controller'
-import { envSchema } from './env'
-import { AuthModule } from './auth/auth.module'
 import { AuthenticateController } from './controllers/authenticate.controller'
 import { CreateQuestionController } from './controllers/create-question.controller'
 import { FetchRecentQuestionsController } from './controllers/fetch-recent-questions.controller'
+import { DatabaseModule } from '../database/database.module'
+import { CreateQuestionUseCase } from '@/domain/forum/application/use-cases/create-question'
+import { FetchRecentQuestionsUseCase } from '@/domain/forum/application/use-cases/fetch-recent-questions'
 
 @Module({
-  imports: [
-    ConfigModule.forRoot({
-      validate: (env) => envSchema.parse(env),
-      isGlobal: true,
-      ignoreEnvFile: true,
-    }), // ✅ carrega o .env primeiro
-    AuthModule,
-  ],
+  imports: [DatabaseModule],
   controllers: [
     CreateAccountController,
     AuthenticateController,
     CreateQuestionController,
     FetchRecentQuestionsController,
   ],
-  providers: [PrismaService],
+  providers: [CreateQuestionUseCase, FetchRecentQuestionsUseCase],
 })
-export class AppModule {}
+export class HttpModule {}
